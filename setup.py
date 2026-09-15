@@ -26,10 +26,10 @@ def get_requirements()->List[str]:
 
 
 setup(
-    name = "Network security",
-    version = "0.0.1",
-    author = "Olalekan Waheed",
-    author_email = "waheedolalekan23@gmail.com",
-    packages = find_packages(),
-    install_requires= get_requirements()
+    name="Network security",
+    version="0.0.1",
+    author="Olalekan Waheed",
+    author_email="waheedolalekan23@gmail.com",
+    packages=find_packages(),
+    install_requires=get_requirements()
     )
