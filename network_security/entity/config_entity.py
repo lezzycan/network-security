@@ -6,12 +6,13 @@ from network_security.constants import training_pipeline
 
 
 class TrainingPipelineConfig:
-    def __init__(self, timestamp = datetime.now()):
+    def __init__( self, timestamp=None):
+        timestamp = timestamp or datetime.now()
         timestamp = timestamp.strftime("%m_%d_%Y_%H_%M_%S")
         self.pipeline_name = training_pipeline.PIPELINE_NAME
         self.artifacts_name = training_pipeline.ARTIFACTS_DIR
         self.artifacts_dir = os.path.join(self.artifacts_name, timestamp)
-        self.timestamp: str= self.timestamp
+        self.timestamp: str = timestamp
 
 
 class DataIngestionConfig:
