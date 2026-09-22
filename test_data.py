@@ -1,11 +1,13 @@
 
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-
+import certifi
 uri = "mongodb+srv://Lezzycan:<@password>@cluster0.id99zq4.mongodb.net/?appName=Cluster0"
 
 # Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
+
+
+client = MongoClient(uri, server_api=ServerApi('1'), tlsCAFile=certifi.where())
 
 # Send a ping to confirm a successful connection
 try:
