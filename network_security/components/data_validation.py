@@ -49,7 +49,7 @@ class DataValidation:
                 return True
             return False
         except Exception as e:
-            return NetworkSecurityException(e, sys)    
+            raise NetworkSecurityException(e, sys)    
 
     def detect_dataset_drift(self, base_df, current_df, threshold = 0.05) -> bool:
         try:
@@ -75,7 +75,7 @@ class DataValidation:
             os.makedirs(dir_path, exist_ok=True)
             write_yaml_file(drift_report_file_path, content=report)
         except Exception as e:
-            return NetworkSecurityException(e, sys)    
+            raise NetworkSecurityException(e, sys)    
 
 
 
